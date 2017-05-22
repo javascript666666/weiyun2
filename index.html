@@ -2,153 +2,216 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>妙味云盘</title>
 		<link rel="stylesheet"  href="css/index.css"/>
 	</head>
 	<body>
 		<section class="box">
+			<div id="moveTo"> 
+				<div class="move_title">文件夹移动到：</div>
+				<ul class="moveToFile">
+				</ul>
+				<button>取消</button>
+				<button>确定</button>
+			</div>
 			<header class="head">
 				<h1 class="left">
-					<a class="title" href="">妙味云盘</a>
+					<a class="title" href="javaScript:;"></a>
+					<a class="name" href="javaScript:;">我的云盘</a>
 				</h1>
+				<div class="tips">
+					<div class="time-delay">连接服务器超时,请稍后再试</div>
+					<div class="dele-ok">删除文件成功</div>
+					<div class="create-ok">新建文件成功</div>
+					<div class="selec-sure">请选择文件</div>
+					<div class="dele-sure">
+						确定要删除这个文件吗
+						<button class="del-no">取消</button> 
+						<button class="del-yes">确定</button>
+					</div>
+					<div class="cove-sure">
+						文件重名,是否覆盖文件
+						<button class="cover-no">取消</button> 
+						<button class="cover-yes">确定</button>
+					</div>
+					<div class="rename-sure">
+						文件重名,请修改文件名 
+						<button class="rename-no">取消</button> 
+						<button class="rename-yes">确定</button>
+					</div>
+				</div>
 				<div class="right">
 					<div class="user">
-						<a class="photo" href=""></a>
-						<a class="more" href=""></a>
+						<a class="photo" href="javaScript:;"></a>
+						<a class="more" href="javaScript:;"></a>
 					</div>
 					<span class="line"></span>
-					<a class="option" href="" ></a>
+					<a class="option" href="javaScript:;" ></a>
 				</div>
 			</header>
 			<div class="main clearfix">
 				<nav class="top_nav">
 					<ul class="nav_list clearfix">
 						<li class="nav_item">
-							<a class="nav_ico ico1" href=""></a>
-							<a class="nav_text" href="">下载</a>
+							<a class="nav_ico ico1" href="javaScript:;"></a>
+							<a class="nav_text" href="javaScript:;">下载</a>
 						</li>
 						<li class="nav_item">
-							<a class="nav_ico ico2" href=""></a>
-							<a class="nav_text" href="">分享</a>
+							<a class="nav_ico ico2" href="javaScript:;"></a>
+							<a class="nav_text" href="javaScript:;">分享</a>
 						</li>
 						<li class="nav_item">
-							<a class="nav_ico ico3" href=""></a>
-							<a class="nav_text" href="">移动到</a>
+							<a class="nav_ico ico3" href="javaScript:;"></a>
+							<a class="nav_text" id="move_file" href="javaScript:;">移动到</a>
 						</li>
 						<li class="nav_item">
-							<a class="nav_ico ico4" href=""></a>
-							<a class="nav_text" href="">重命名</a>
+							<a class="nav_ico ico4" href="javaScript:;"></a>
+							<a class="nav_text" id="re-name" href="javaScript:;">重命名</a>
 						</li>
 						<li class="nav_item">
-							<a class="nav_ico ico5" href=""></a>
-							<a class="nav_text" href="">删除</a>
+							<a class="nav_ico ico5" href="javaScript:;"></a>
+							<a class="nav_text" id="del_filder" href="javaScript:;">删除</a>
 						</li>
 						<li class="nav_item">
-							<a class="nav_ico ico6" href=""></a>
-							<a class="nav_text" href="">新建文件夹</a>
+							<a class="nav_ico ico6" href="javaScript:;"></a>
+							<a class="nav_text" id="new_filder" href="javaScript:;">新建文件夹</a>
 						</li>
 						<li class="nav_item last">
-							<a class="nav_ico ico7" href=""></a>
-							<a class="nav_text" href=""></a>
+							<a class="nav_ico ico7" href="javaScript:;"></a>
+							<a class="nav_text" href="javaScript:;"></a>
 						</li>
 					</ul>
 					<div class="topnav_right">
 						<a class="right_ico"></a>
 						<div class="rank">
-							<a class="rank_ico" href=""></a>
-							<a class="rankmore_ico" href=""></a>
+							<a class="rank_ico" href="javaScript:;"></a>
+							<a class="rankmore_ico" href="javaScript:;"></a>
 							<div class="option">
-								<a class="tiem" href="">按时间排序</a>
-								<a class="letter" href="">按字母顺序</a>
-								<a class="img" href="">显示缩略图</a>
+								<a class="tiem" href="javaScript:;">按时间排序</a>
+								<a class="letter" href="javaScript:;">按字母顺序</a>
+								<a class="img" href="javaScript:;">显示缩略图</a>
 							</div>
 							<div class="option2">
-								<a class="tiem2" href=""></a>
-								<a class="letter2" href=""></a>
-								<a class="img2" href=""></a>
+								<a class="tiem2" href="javaScript:;"></a>
+								<a class="letter2" href="javaScript:;"></a>
+								<a class="img2" href="javaScript:;"></a>
 							</div>
 						</div>
 					</div>
 				</nav>
 				<div class="main_left">
-					<div class="wy_class">
+					<ul id="left_list">
+					</ul>
+					<!--<div class="wy_class">
 						<div class="wy_info">
-							<a class="wy_more" href=""></a>
-							<a class="wy_text" href="">微云</a>
+							<a class="wy_more" href="javaScript:;"></a>
+							<a class="wy_text" href="javaScript:;">微云</a>
 						</div>
 						<div class="js_info">
-							<a class="js_more" href=""></a>
-							<a class="js_text" href="">js课程</a>
+							<a class="js_more" href="javaScript:;"></a>
+							<a class="js_text" href="javaScript:;">js课程</a>
 						</div>
 						<ul class="js_list">
 							<li class="js_item">
 								<div class="item_123">
-									<a href="">123</a>
+									<a href="javaScript:;">123</a>
 								</div>
 							</li>
 							<li class="js_item">
 								<div class="item_333">
-									<a class="more" href=""></a>
-									<a class="text" href="">333</a>
+									<a class="more" href="javaScript:;"></a>
+									<a class="text" href="javaScript:;">333</a>
 								</div>
 							</li>
 							<li class="js_item css">
 								<div class="css_info">
-									<a class="more" href=""></a>
-									<a class="text" href="">CSS课程</a>
+									<a class="more" href="javaScript:;"></a>
+									<a class="text" href="javaScript:;">CSS课程</a>
 								</div>
 								<div class="css_class">
-									<a href="">CSS课程</a>
-									<a href="">123</a>
-									<a href="">JS基础课程</a>
+									<a href="javaScript:;">CSS课程</a>
+									<a href="javaScript:;">123</a>
+									<a href="javaScript:;">JS基础课程</a>
 								</div>
 							</li>
 							<li class="js_item item_other">
 								<div class="item_11111">
-									<a class="more" href=""></a>
-									<a class="text" href="">11111</a>
+									<a class="more" href="javaScript:;"></a>
+									<a class="text" href="javaScript:;">11111</a>
 								</div>
 							</li>
 							<li class="js_item">
 								<div class="item_11111">
-									<a class="more" href=""></a>
-									<a class="text" href="">11111</a>
+									<a class="more" href="javaScript:;"></a>
+									<a class="text" href="javaScript:;">11111</a>
 								</div>
 							</li>
 						</ul>
-					</div>
+					</div>-->
 				</div>
 				<div class="main_right">
-					<form action="" >
+					
+					<!--<form action="" >-->
 						<div class="breadcrum clearfix">
-							<input class="check" type="checkbox" />
-							<ul class="option_list">
-								<li class="option_item">
-									<a class="option" href="">微云</a>
+							<input class="check" id="check" type="checkbox" />
+							<ul class="option_list" id="nav_list">
+								<!--<li class="option_item">
+									<a class="option" href="javaScript:;">微云</a>
 								</li class="option_item">
 								<li class="option_item">
-									<a class="option" href="">JS课程</a>
+									<a class="option" href="javaScript:;">JS课程</a>
 								</li >
 								<li class="option_item">
-									<a class="option" href="">CSS课程</a>
+									<a class="option" href="javaScript:;">CSS课程</a>
 								</li>
 								<li class="option_item ">
-									<a class="option last option_active" href="">JS基础课程</a>
-								</li>
+									<a class="option last option_active" href="javaScript:;">JS基础课程</a>
+								</li>-->
 							</ul>
 						</div>
-						<ul class="content_list">
+						<ul class="menu">
+							<li>
+								<span>下载</span>
+							</li>
+							<li>
+								<span>分享</span>
+								<ul class="item1">
+									<li><span>微博</span></li>
+									<li><span>微信</span></li>
+									<li><span>论坛</span></li>
+								</ul>
+							</li>
+							<li>
+								<span>删除</span>
+							</li>
+							<li>
+								<span>新建</span>
+								<ul class="item1">
+									<li>文本</li>
+									<li>文件夹</li>
+								</ul>
+							</li>
+							<li>
+								<span>排序</span>
+								<ul class="item1">
+									<li>时间</li>
+									<li>名称</li>
+								</ul>
+							</li>
+						</ul>
+						<ul id="right_list" class="right_list">
+						</ul>
+						<!--<ul class="content_list">
 							<li class="content_item js">
 								<div class="item_left">
 									<input class="check" type="checkbox" />
-									<a class="content_text" href="">JS基础课程</a>
+									<a class="content_text" href="javaScript:;">JS基础课程</a>
 								</div>
 								<div class="item_right">
-									<a class="ico_control1" href="">下载</a>
-									<a class="ico_control2" href="">分享</a>
-									<a class="ico_control3" href="">移动</a>
-									<a class="ico_control4" href="">添加</a>
-									<a class="ico_control5" href="">删除</a>
+									<a class="ico_control1" href="javaScript:;">下载</a>
+									<a class="ico_control2" href="javaScript:;">分享</a>
+									<a class="ico_control3" href="javaScript:;">移动</a>
+									<a class="ico_control4" href="javaScript:;">添加</a>
+									<a class="ico_control5" href="javaScript:;">删除</a>
 								</div>
 								<time class="time">
 									2016-08-22 16:08
@@ -157,24 +220,33 @@
 							<li class="content_item js2">
 								<div class="item_left">
 									<input class="check" type="checkbox" />
-									<a class="content_text" href="">JS基础课程</a>
+									<a class="content_text" href="javaScript:;">JS基础课程</a>
 								</div>
 								<div class="item_right">
-									<a class="ico_control1" href="">下载</a>
-									<a class="ico_control2" href="">分享</a>
-									<a class="ico_control3" href="">移动</a>
-									<a class="ico_control4" href="">添加</a>
-									<a class="ico_control5" href="">删除</a>
+									<a class="ico_control1" href="javaScript:;">下载</a>
+									<a class="ico_control2" href="javaScript:;">分享</a>
+									<a class="ico_control3" href="javaScript:;">移动</a>
+									<a class="ico_control4" href="javaScript:;">添加</a>
+									<a class="ico_control5" href="javaScript:;">删除</a>
 								</div>
 								<time class="time">
-									2016-08-22 16:08
+									
 								</time>
 							</li>
-						</ul>
-					</form>
+						</ul>-->
+					<!--</form>-->
 				</div>
 			</div>
 			
 		</section>
+		<script src="js/data.js"></script>
+		<script src="js/tool.js"></script>
+		<script src="js/fq_tools.js"></script>
+		<script src="js/createNode.js"></script>
+		<script src="js/createHTML.js"></script>
+		<script src = "js/main.js"></script>
+		<!--<script >
+			createHtml(data,1);
+		</script>-->
 	</body>
 </html>

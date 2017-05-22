@@ -24,29 +24,42 @@ input{
 	clear:both;
 }
 body{
+	position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    overflow: hidden;
 	background-color: #6e7db2;
 	font: 14px "宋体",arial;
 	color:#8c979f;
 }
 .box{
 	width:1200px;
-	height:710px;
+	height:650px;
 	background-color: #fff;
-	margin:60px auto ;
+	margin: auto ;
 	border-radius:14px; 
 }
 .box .head{
-	height:70px;
+	height:90px;
 	padding-left:28px;
 	padding-right:40px;
 }
 .head .left{
 	float:left;	
-	height:70px;
+	height:90px;
 	width:150px;	
+}
+.head .left .name{
+	float:left;	
+	height:90px;
+	line-height: 90px;
 }
 .head .title{
 	float:left;
+	margin-top: 10px ;
 	padding-left: 60px;
 	color:#389cd1;
 	padding-top:4px;
@@ -55,9 +68,58 @@ body{
 	background:url(../img/sprite_head.png) no-repeat 0px 18px;
 	overflow: hidden;
 }
+.head .tips{
+	margin-left: 330px;
+	margin-top: 10px;
+	float: left;
+	height: 79px;
+	width: 220px;
+	position: relative;
+}
+.tips div{
+	position: absolute;
+	height: 35px;
+	padding: 2px 10px;
+	border-radius: 10px;
+	background: pink;
+	color: #fff;
+	font: 16px/35px "微软雅黑";
+	top: 10px;
+	display: none;
+	text-align: center;
+}
+.tips div button{
+	margin: 2px 10px;
+	
+}
+.tips .time-delay.active{
+	display: block;
+}
+.tips .dele-ok.active{
+	display: block;
+}
+.tips .create-ok.suc{
+	display: block;
+	background: mediumvioletred;
+}
+.tips .create-ok.fail{
+	display: block;
+	background: dodgerblue;
+}
+.tips .selec-sure.active{
+	display: block;
+}.tips .dele-sure.active{
+	display: block;
+}
+.tips .cove-sure.active{
+	display: block;
+}
+.tips .rename-sure.active{
+	display: block;
+}
 .head .right{
 	float:right;
-	height:70px;
+	height:90px;
 }
 .head .user{
 	float:left;
@@ -65,7 +127,7 @@ body{
 }
 .head .photo{
 	float:left;
-	margin-top:20px;
+	margin-top:25px;
 	width:40px;
 	height:40px;
 	background:url(../img/sprite_head.png) no-repeat 0px -52px; 
@@ -77,7 +139,7 @@ body{
 	width:12px;
 	height:6px;
 	background: url(../img/sprite_head.png) no-repeat 0px -110px;
-	margin-top: 35px;
+	margin-top: 40px;
 	margin-left: 10px;
 }
 .head .line{
@@ -85,14 +147,14 @@ body{
 	width:1px;
 	height:22px;
 	background-color: #e0e6e7;
-	margin:25px 14px 0px 15px;
+	margin:30px 14px 0px 15px;
 }
 .head .option{
 	float:left;
 	width:16px;
 	height:16px;
 	background: url(../img/sprite_head.png) no-repeat 0px -128px;
-	margin-top:28px;
+	margin-top:33px;
 }
 /*===============导航==================*/
 .main{
@@ -108,6 +170,7 @@ body{
 }
 .top_nav .nav_list{
 	float:left;
+	position: relative;
 }
 .top_nav .nav_item{
 	float:left;
@@ -155,6 +218,57 @@ body{
 	height:36px;
 	line-height: 36px;
 }
+#moveTo{
+	position:absolute;
+	width: 350px;
+	height: 450px;
+	z-index: 5;
+	background: #fff;
+	top: 100px;
+	left: 700px;
+	border-radius: 15px;
+	padding: 15px;
+	padding-top: 45px;
+	border: 2px solid #55addc;
+	display: none;
+	z-index: 99;
+}
+#moveTo .move_title{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	font: 16px/50px "微软雅黑";
+	text-align: center;
+}
+#moveTo .move_title:hover{
+	cursor: move;
+}
+#moveTo .moveToFile{
+	margin: 5px;
+	padding: 5px;
+	width:100%;
+	height: 370px;
+	overflow: auto;
+	border: 1px solid #000;
+}
+#moveTo button:nth-of-type(1){
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	margin: 0 20px
+}
+#moveTo button:nth-of-type(2){
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	margin: 0 20px
+}
+
+#moveTo.active{
+	display: block;
+}
 .top_nav .topnav_right{
 	float:right;
 	height:58px;
@@ -200,6 +314,7 @@ body{
 	border: 1px solid  #55addc;
 	padding: 5px 0;
 	border-radius: 5px;
+	z-index: 5;
 }
 
 .option a{
@@ -239,8 +354,8 @@ background-position:0px -340px ;
 /*=============main_left============*/
 .main .main_left{
 	float:left;
-	width:258px;
-	height:580px;
+	width:358px;
+	height:500px;
 	border-right:2px solid #e1e8ed;
 	overflow: auto;
 }
@@ -272,6 +387,7 @@ background-position:0px -340px ;
 }
 .li_class h2 {
 	margin: 0;
+	margin-right: 30px;
 	word-break: keep-all;
 	float:left;
   	height: 20px;
@@ -297,11 +413,13 @@ background-position:0px -340px ;
     background: url(../img/sprite_mainleft.png) no-repeat padding-box 0px -116px;
 }
 .li_class h2:hover{
-    background-color:lightblue;
+    background-color:#e1e8ee;
+}.li_class h2.active{
+    background-color:#e1e8ee;
 }
 .li_item{
 	float:left;
-	display: none;
+	display: -none;
 	padding-left: 40px;
 }
 .active{
@@ -434,12 +552,55 @@ background-position:0px -340px ;
 /*==================main_right===============*/
 .main .main_right{
 	float:left;
-	width:940px;
+	width:840px;
+	height: 500px;
+	position: relative;
 }
 .main_right .breadcrum{
 	height:48px;
 	border-bottom:2px solid #e1e8ed;
 	background-color: #fff;
+}
+
+.main_right .menu{
+	position:absolute;
+	z-index:7;
+	width: 200px;
+	height: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background: #f0f0f0;
+	border: 1px solid #fff;
+	top: 30px;
+	left: 30px;
+	display: none;
+	/*overflow: hidden;*/
+}
+.menu.active{
+	display: block;
+}
+.menu li{
+	border-bottom: 1px solid #fff;
+	width: 100%;
+	height: 48px;
+	font: 16px/48px "微软雅黑";
+	text-align: center;
+	position: relative;
+}
+.menu li:hover .item1{
+	width: 200px;
+	display: block;
+	z-index: 5;
+	position: absolute;
+	left: 200px;
+	top: 0;
+	display: block;
+	background: yellow;
+}
+.menu .item1{
+	display: none;
 }
 .check{
 	float:left;
@@ -489,40 +650,61 @@ background-position:0px -340px ;
 }
 
 #right_list{
+	height: 410px;
 	padding: 20px;
+	/*display: flex;
+	justify-content: flex-start;
+	align-content: center;*/
+	position: relative;
 }
 .list-file{
-	position: relative;
 	display: inline-block;
 	width: 100px;
 	height: 120px;
-	margin-right:20px;
-	margin-bottom: 20px;
+	margin: 10px;
+	padding: 25px;
+	border-radius: 10px;
+	position: relative;
+	background: #ebeff0;
+	
+}
+.list-file:hover{
+	border: 1px solid #6ea6c1;
+	background: #fff;
+}
+.list-file.active{
+	border: 1px solid #6ea6c1;
+	background: #fff;
 }
 .file-img{
-	width: 100px;
-	height: 80px;
-	background: url(../img/1.jpg) no-repeat;
-	background-size: 100px 100px;
+	margin: 10px auto;
+	width: 80px;
+	height: 72px;
+	background: url(../img/1.png) no-repeat;
+	background-size: 80px 72px;
+}
+.list-file:hover .file-checkbox{
+	display: block;
 }
 .file-checkbox{
 	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 35px;
-	height: 35px;
-	background: pink;
-	font: 30px/35px "微软雅黑";
-	color:pink;
+	top: 10px;
+	left: 10px;
+	width: 25px;
+	height: 25px;
+	background: #61abd8;
+	font: 18px/25px "微软雅黑";
+	color:#61abd8;
 	display: none;
 	text-align: center;
+	box-sizing: border-box;
 }
 .list-file span.active{
 	color:#fff;
 	display: block;
 }
 .list-file:hover span{
-	display: block;
+	/*display: block;*/
 }
 .file-change-name{
 	left: 0px;
@@ -531,7 +713,7 @@ background-position:0px -340px ;
 	height: 35px;
 	font: 16px/35px "微软雅黑";
 	text-align: center;
-	display: none;
+	display: block;
 }
 .file-show-name{
 	display: inline-block;
@@ -541,12 +723,21 @@ background-position:0px -340px ;
 	height: 35px;
 	font: 16px/35px "微软雅黑";
 	text-align: center;
+	display: none;
 }
-.file-name input.active{
+.file-name input.show{
+	display: none;
+	color:#77a6c2;
+}
+.file-name span.show{
 	display: block;
 }
-.file-name span.active{
-	display: none;
+.file-check-div{
+	position: absolute;
+	width:20px;
+	height: 20px;
+	border: 1px dotted #000;
+	background: rgba(0,0,255,0.1);
 }
 /*.content_item .content_text{
 	float:left;

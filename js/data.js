@@ -1,7 +1,8 @@
-var data = [
+var data =[
 		{
 			name: '根目录',
 			id: 0,
+			maxid:24,
 			type: 'filder',
 			checked: false,
 			child: [
@@ -18,6 +19,7 @@ var data = [
 							pid: 1,
 							type: 'filder',
 							checked: false,
+							child:[]
 						},
 						{  
 							name: '我的电影',
@@ -32,6 +34,7 @@ var data = [
 									pid: 3,
 									type: 'filder',
 									checked: false,
+									child:[]
 								},
 								{
 									name: '欧美电影',
@@ -45,21 +48,24 @@ var data = [
 											id: 6,
 											pid: 5,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										},
 										{
 											name: '越狱第二部',
 											id: 7,
 											pid: 5,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										},
 										{
 											name: '越狱第三部',
 											id: 8,
 											pid: 5,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										}
 									]
 								},
@@ -75,21 +81,24 @@ var data = [
 											id: 10,
 											pid: 9,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										},
 										{
 											name: '海贼王',
 											id: 11,
 											pid: 9,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										},
 										{
 											name: '死神来了',
 											id: 12,
 											pid: 9,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										}
 									]
 								}
@@ -107,7 +116,8 @@ var data = [
 									id: 14,
 									pid: 13,
 									type: 'filder',
-									checked: false
+									checked: false,
+									child:[]
 								},
 								{
 									name: 'JS文件夹',
@@ -121,21 +131,24 @@ var data = [
 											id: 16,
 											pid: 15,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										},
 										{
 											name: 'DOM',
 											id: 17,
 											pid: 15,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										},
 										{
 											name: 'BOM',
 											id: 18,
 											pid: 15,
 											type: 'filder',
-											checked: false
+											checked: false,
+											child:[]
 										}
 									]
 								}
@@ -154,14 +167,16 @@ var data = [
 							id: 20,
 							pid: 19,
 							type: 'filder',
-							checked: false
+							checked: false,
+							child:[]
 						},
 						{
 							name: '学习',
 							id: 21,
 							pid: 19,
 							type: 'filder',
-							checked: false
+							checked: false,
+							child:[]
 						},
 						{
 							name: '下载',
@@ -175,14 +190,16 @@ var data = [
 									id: 23,
 									pid: 22,
 									type: 'filder',
-									checked: false
+									checked: false,
+									child:[]
 								},
 								{
 									name: '音乐',
 									id: 24,
 									pid: 22,
 									type: 'filder',
-									checked: false
+									checked: false,
+									child:[]
 								},
 							]
 						}
@@ -191,6 +208,79 @@ var data = [
 			]
 		}
 	];
+	
+	data =[
+		{
+			name: '根目录',
+			id: 0,
+			maxid:7,
+			type: 'filder',
+			checked: false,
+			child: [{
+			name: '学习',
+			id: 1,
+			pid: 0,
+			type: 'filder',
+			checked: false,
+			child: [{
+				name: '1',
+				id: 2,
+				pid: 1,
+				type: 'filder',
+				checked: false,
+				child: []
+			}]
+		},{
+			name: '游戏',
+			id: 3,
+			pid: 0,
+			type: 'filder',
+			checked: false,
+			child: [{
+				name: '2',
+				id: 4,
+				pid: 3,
+				type: 'filder',
+				checked: false,
+				child: []
+			},{
+				name: '1',
+				id: 5,
+				pid: 3,
+				type: 'filder',
+				checked: false,
+				child: []
+			}]
+		},{
+			name: '英语',
+			id: 6,
+			pid: 0,
+			type: 'filder',
+			checked: false,
+			child: [{
+				name: '1',
+				id: 7,
+				pid: 6,
+				type: 'filder',
+				checked: false,
+				child: []
+			}]
+		}]
+		}
+	];
+
+//定义个初始ID
+var num = data[0].maxid;
+
+//	var dataNew = [
+//		{
+//			name: '新建文件夹',
+//			id: 'maxid + 1',
+//			type: 'filder',
+//			checked: false,
+//			child: []
+//		}
+//	];
 ////=====================================
 //		var  wy= {};
 //		//获取到一组数据data中指定的id的对应的数据	
